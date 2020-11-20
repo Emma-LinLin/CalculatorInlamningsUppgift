@@ -169,7 +169,7 @@ namespace CalculatorInlamningsUppgift
                             totalSum.Add(result);
                             break;
                         case "/":
-                            result = firstTerm + (secondTerm / thirdTerm);
+                            result = (firstTerm / secondTerm) / thirdTerm;
                             Console.WriteLine($"{firstTerm} / {secondTerm} / {thirdTerm} = {result}");
                             totalSum.Add(result);
                             break;
