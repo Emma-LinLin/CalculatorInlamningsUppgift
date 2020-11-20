@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CalculatorInlamningsUppgift
 {
@@ -11,6 +12,9 @@ namespace CalculatorInlamningsUppgift
             double firstTerm;
             double secondTerm;
             double thirdTerm;
+            double result = 0;
+
+            List<double> totalSum = new List<double>();
 
             Console.Write("Enter first operator: ");
             firstOperator = Console.ReadLine();
@@ -26,6 +30,115 @@ namespace CalculatorInlamningsUppgift
 
             Console.Write("Enter third term: ");
             thirdTerm = Convert.ToDouble(Console.ReadLine());
+
+            if(firstOperator == "+")
+            {
+                if (secondOperator == "+")
+                {
+                    result = firstTerm + secondTerm + thirdTerm;
+                    Console.WriteLine($"{firstTerm} + {secondTerm} + {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "-")
+                {
+                    result = firstTerm + secondTerm - thirdTerm;
+                    Console.WriteLine($"{firstTerm} + {secondTerm} - {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "*")
+                {
+                    result = firstTerm + (secondTerm * thirdTerm);
+                    Console.WriteLine($"{firstTerm} + {secondTerm} * {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "/")
+                {
+                    result = firstTerm + (secondTerm / thirdTerm);
+                    Console.WriteLine($"{firstTerm} + {secondTerm} / {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+            }
+            else if (firstOperator == "-")
+            {
+                if (secondOperator == "+")
+                {
+                    result = firstTerm - secondTerm + thirdTerm;
+                    Console.WriteLine($"{firstTerm} - {secondTerm} + {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "-")
+                {
+                    result = firstTerm - secondTerm - thirdTerm;
+                    Console.WriteLine($"{firstTerm} - {secondTerm} - {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "*")
+                {
+                    result = firstTerm - (secondTerm * thirdTerm);
+                    Console.WriteLine($"{firstTerm} - {secondTerm} * {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "/")
+                {
+                    result = firstTerm - (secondTerm / thirdTerm);
+                    Console.WriteLine($"{firstTerm} - {secondTerm} / {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+            }
+            if (firstOperator == "*")
+            {
+                if (secondOperator == "+")
+                {
+                    result = (firstTerm * secondTerm) + thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} + {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "-")
+                {
+                    result = (firstTerm * secondTerm) - thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} - {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "*")
+                {
+                    result = (firstTerm * secondTerm) * thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} * {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (secondOperator == "/")
+                {
+                    result = (firstTerm * secondTerm) / thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} / {thirdTerm} = {result}");
+                    totalSum.Add(result);
+                }
+                else if (firstOperator == "/")
+                {
+                    if (secondOperator == "+")
+                    {
+                        result = (firstTerm / secondTerm) + thirdTerm;
+                        Console.WriteLine($"{firstTerm} / {secondTerm} + {thirdTerm} = {result}");
+                        totalSum.Add(result);
+                    }
+                    else if (secondOperator == "-")
+                    {
+                        result = (firstTerm / secondTerm) - thirdTerm;
+                        Console.WriteLine($"{firstTerm} / {secondTerm} - {thirdTerm} = {result}");
+                        totalSum.Add(result);
+                    }
+                    else if (secondOperator == "*")
+                    {
+                        result = firstTerm / (secondTerm * thirdTerm);
+                        Console.WriteLine($"{firstTerm} / {secondTerm} * {thirdTerm} = {result}");
+                        totalSum.Add(result);
+                    }
+                    else if (secondOperator == "/")
+                    {
+                        result = firstTerm + (secondTerm / thirdTerm);
+                        Console.WriteLine($"{firstTerm} / {secondTerm} / {thirdTerm} = {result}");
+                        totalSum.Add(result);
+                    }
+                }
+            }
         }
     }
 }
