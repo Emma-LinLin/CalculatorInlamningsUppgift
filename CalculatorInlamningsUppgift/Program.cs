@@ -144,33 +144,33 @@ namespace CalculatorInlamningsUppgift
                         }
                     }
 
-                    if (result == 100)
-                    {
-                        Console.WriteLine("Congratulations! You now have a hundered, clap clap!");
-                    }
-                    else if (result < 100)
-                    {
-                        Console.WriteLine("Your result was less than a hundered");
-                    }
-                    else if (result > 100)
-                    {
-                        Console.WriteLine("Your result was more than a hundered");
-                    }
+                }
 
-                    Console.WriteLine("Continue? Press \"X\" to quit");
-                    userChoice = Console.ReadLine().ToLower();
+                if (result == 100)
+                {
+                    Console.WriteLine("Congratulations! You now have a hundered, clap clap!");
+                }
+                else if (result < 100)
+                {
+                    Console.WriteLine("Your result was less than a hundered");
+                }
+                else if (result > 100)
+                {
+                    Console.WriteLine("Your result was more than a hundered");
+                }
 
-                    if (userChoice == "x")
-                    {
-                        double sum = totalSum.Sum();
-                        Console.WriteLine($"The total sum of all rounds adds up to {sum}, thanks for playing!");
-                        break;
-                    }
-                    else
-                    {
-                        continue;
-                    }
+                Console.WriteLine("Continue? Press \"X\" to quit");
+                userChoice = Console.ReadLine().ToLower();
 
+                if (userChoice == "x")
+                {
+                    double sum = totalSum.Sum();
+                    Console.WriteLine($"The total sum of all rounds adds up to {sum}, thanks for playing!");
+                    break;
+                }
+                else
+                {
+                    continue;
                 }
             }
         }
