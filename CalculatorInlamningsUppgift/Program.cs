@@ -8,8 +8,11 @@ namespace CalculatorInlamningsUppgift
     {
         static void Main(string[] args)
         {
+            Console.Title = "Calculator";
+
             string firstOperator;
             string secondOperator;
+
             double firstTerm;
             double secondTerm;
             double thirdTerm;
