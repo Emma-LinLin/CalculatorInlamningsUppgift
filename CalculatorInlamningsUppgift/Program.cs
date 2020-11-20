@@ -10,12 +10,8 @@ namespace CalculatorInlamningsUppgift
         {
             Console.Title = "Calculator";
 
-            string firstOperator;
-            string secondOperator;
+            string firstOperator, secondOperator;
 
-            double firstTerm;
-            double secondTerm;
-            double thirdTerm;
             double result = 0;
 
             List<double> totalSum = new List<double>();
@@ -24,6 +20,8 @@ namespace CalculatorInlamningsUppgift
 
             while (true)
             {
+                bool userInput = false;
+
                 Console.Write("Enter first operator: ");
                 firstOperator = Console.ReadLine();
 
@@ -31,13 +29,47 @@ namespace CalculatorInlamningsUppgift
                 secondOperator = Console.ReadLine();
 
                 Console.Write("Enter first term: ");
-                firstTerm = Convert.ToDouble(Console.ReadLine());
+                double firstTerm = 0;
+
+                while (!userInput)
+                {
+                    userInput = double.TryParse(Console.ReadLine(), out firstTerm);
+
+                    if (!userInput)
+                    {
+                        Console.WriteLine("Try again! Only numbers please");
+                    }
+                }
+
+                userInput = false;
 
                 Console.Write("Enter second term: ");
-                secondTerm = Convert.ToDouble(Console.ReadLine());
+                double secondTerm = 0;
+
+                while (!userInput)
+                {
+                    userInput = double.TryParse(Console.ReadLine(), out secondTerm);
+
+                    if (!userInput)
+                    {
+                        Console.WriteLine("Try again! Only numbers please");
+                    }
+                }
+
+                userInput = false;
 
                 Console.Write("Enter third term: ");
-                thirdTerm = Convert.ToDouble(Console.ReadLine());
+                double thirdTerm = 0;
+
+                while (!userInput)
+                {
+                    userInput = double.TryParse(Console.ReadLine(), out thirdTerm);
+
+                    if (!userInput)
+                    {
+                        Console.WriteLine("Try again! Only numbers please");
+                    }
+                }
 
                 if (firstOperator == "+")
                 {
