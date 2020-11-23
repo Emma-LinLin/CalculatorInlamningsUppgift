@@ -38,108 +38,22 @@ namespace CalculatorInlamningsUppgift
 
                 if (firstOperator == "+")
                 {
-                    switch (secondOperator)
-                    {
-                        case "+":
-                            result = firstTerm + secondTerm + thirdTerm;
-                            Console.WriteLine($"{firstTerm} + {secondTerm} + {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "-":
-                            result = firstTerm + secondTerm - thirdTerm;
-                            Console.WriteLine($"{firstTerm} + {secondTerm} - {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "*":
-                            result = firstTerm + (secondTerm * thirdTerm);
-                            Console.WriteLine($"{firstTerm} + {secondTerm} * {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "/":
-                            result = firstTerm + (secondTerm / thirdTerm);
-                            Console.WriteLine($"{firstTerm} + {secondTerm} / {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                    }
+                    result = CalculateAddition(secondOperator, firstTerm, secondTerm, thirdTerm);
                 }
                 else if (firstOperator == "-")
                 {
-                    switch (secondOperator)
-                    {
-                        case "+":
-                            result = firstTerm - secondTerm + thirdTerm;
-                            Console.WriteLine($"{firstTerm} - {secondTerm} + {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "-":
-                            result = firstTerm - secondTerm - thirdTerm;
-                            Console.WriteLine($"{firstTerm} - {secondTerm} - {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "*":
-                            result = firstTerm - (secondTerm * thirdTerm);
-                            Console.WriteLine($"{firstTerm} - {secondTerm} * {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "/":
-                            result = firstTerm - (secondTerm / thirdTerm);
-                            Console.WriteLine($"{firstTerm} - {secondTerm} / {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                    }
+                    result = CalculateSubtraction(secondOperator, firstTerm, secondTerm, thirdTerm);
                 }
                 else if (firstOperator == "*")
                 {
-                    switch (secondOperator)
-                    {
-                        case "+":
-                            result = (firstTerm * secondTerm) + thirdTerm;
-                            Console.WriteLine($"{firstTerm} * {secondTerm} + {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "-":
-                            result = (firstTerm * secondTerm) - thirdTerm;
-                            Console.WriteLine($"{firstTerm} * {secondTerm} - {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "*":
-                            result = (firstTerm * secondTerm) * thirdTerm;
-                            Console.WriteLine($"{firstTerm} * {secondTerm} * {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "/":
-                            result = (firstTerm * secondTerm) / thirdTerm;
-                            Console.WriteLine($"{firstTerm} * {secondTerm} / {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                    }
+                    result = CalculateMultiplication(secondOperator, firstTerm, secondTerm, thirdTerm);
                 }
                 else if (firstOperator == "/")
                 {
-                    switch (secondOperator)
-                    {
-                        case "+":
-                            result = (firstTerm / secondTerm) + thirdTerm;
-                            Console.WriteLine($"{firstTerm} / {secondTerm} + {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "-":
-                            result = (firstTerm / secondTerm) - thirdTerm;
-                            Console.WriteLine($"{firstTerm} / {secondTerm} - {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "*":
-                            result = firstTerm / (secondTerm * thirdTerm);
-                            Console.WriteLine($"{firstTerm} / {secondTerm} * {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                        case "/":
-                            result = (firstTerm / secondTerm) / thirdTerm;
-                            Console.WriteLine($"{firstTerm} / {secondTerm} / {thirdTerm} = {result}");
-                            totalSum.Add(result);
-                            break;
-                    }
+                    result = CalculateMultiplication(secondOperator, firstTerm, secondTerm, thirdTerm);
                 }
+
+                totalSum.Add(result);
 
                 if (result == 100)
                 {
@@ -186,6 +100,115 @@ namespace CalculatorInlamningsUppgift
                 {
                     Console.WriteLine("Only numbers please! Try again");
                 }
+            }
+        }
+        static double CalculateAddition(string secondOperator, double firstTerm, double secondTerm, double thirdTerm)
+        {
+            double result;
+
+            switch (secondOperator)
+            {
+                case "+":
+                    result = firstTerm + secondTerm + thirdTerm;
+                    Console.WriteLine($"{firstTerm} + {secondTerm} + {thirdTerm} = {result}");
+                    return result;
+                case "-":
+                    result = firstTerm + secondTerm - thirdTerm;
+                    Console.WriteLine($"{firstTerm} + {secondTerm} - {thirdTerm} = {result}");
+                    return result;
+                case "*":
+                    result = firstTerm + (secondTerm * thirdTerm);
+                    Console.WriteLine($"{firstTerm} + {secondTerm} * {thirdTerm} = {result}");
+                    return result; 
+                case "/":
+                    result = firstTerm + (secondTerm / thirdTerm);
+                    Console.WriteLine($"{firstTerm} + {secondTerm} / {thirdTerm} = {result}");
+                    return result;
+                default:
+                    Console.WriteLine("Not a valid operator");
+                    return 0;
+            }
+
+        }
+        static double CalculateSubtraction(string secondOperator, double firstTerm, double secondTerm, double thirdTerm)
+        {
+            double result;
+
+            switch (secondOperator)
+            {
+                case "+":
+                    result = firstTerm - secondTerm + thirdTerm;
+                    Console.WriteLine($"{firstTerm} - {secondTerm} + {thirdTerm} = {result}");
+                    return result;
+                case "-":
+                    result = firstTerm - secondTerm - thirdTerm;
+                    Console.WriteLine($"{firstTerm} - {secondTerm} - {thirdTerm} = {result}");
+                    return result;
+                case "*":
+                    result = firstTerm - (secondTerm * thirdTerm);
+                    Console.WriteLine($"{firstTerm} - {secondTerm} * {thirdTerm} = {result}");
+                    return result;
+                case "/":
+                    result = firstTerm - (secondTerm / thirdTerm);
+                    Console.WriteLine($"{firstTerm} - {secondTerm} / {thirdTerm} = {result}");
+                    return result;
+                default:
+                    Console.WriteLine("Not a valid operator");
+                    return 0;
+            }
+        }
+        static double CalculateMultiplication(string secondOperator, double firstTerm, double secondTerm, double thirdTerm)
+        {
+            double result;
+
+            switch (secondOperator)
+            {
+                case "+":
+                    result = (firstTerm * secondTerm) + thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} + {thirdTerm} = {result}");
+                    return result;
+                case "-":
+                    result = (firstTerm * secondTerm) - thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} - {thirdTerm} = {result}");
+                    return result;
+                case "*":
+                    result = (firstTerm * secondTerm) * thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} * {thirdTerm} = {result}");
+                    return result;
+                case "/":
+                    result = (firstTerm * secondTerm) / thirdTerm;
+                    Console.WriteLine($"{firstTerm} * {secondTerm} / {thirdTerm} = {result}");
+                    return result;
+                default:
+                    Console.WriteLine("Not a valid operator");
+                    return 0;
+            }
+        }
+        static double CalculateDivision(string secondOperator, double firstTerm, double secondTerm, double thirdTerm)
+        {
+            double result;
+
+            switch (secondOperator)
+            {
+                case "+":
+                    result = (firstTerm / secondTerm) + thirdTerm;
+                    Console.WriteLine($"{firstTerm} / {secondTerm} + {thirdTerm} = {result}");
+                    return result;
+                case "-":
+                    result = (firstTerm / secondTerm) - thirdTerm;
+                    Console.WriteLine($"{firstTerm} / {secondTerm} - {thirdTerm} = {result}");
+                    return result;
+                case "*":
+                    result = firstTerm / (secondTerm * thirdTerm);
+                    Console.WriteLine($"{firstTerm} / {secondTerm} * {thirdTerm} = {result}");
+                    return result;
+                case "/":
+                    result = (firstTerm / secondTerm) / thirdTerm;
+                    Console.WriteLine($"{firstTerm} / {secondTerm} / {thirdTerm} = {result}");
+                    return result;
+                default:
+                    Console.WriteLine("Not a valid operator");
+                    return 0;
             }
         }
     }
