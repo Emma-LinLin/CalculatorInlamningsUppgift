@@ -20,7 +20,6 @@ namespace CalculatorInlamningsUppgift
 
             while (true)
             {
-                bool userInput = false;
 
                 Console.Write("Enter first operator: ");
                 firstOperator = Console.ReadLine();
@@ -29,47 +28,13 @@ namespace CalculatorInlamningsUppgift
                 secondOperator = Console.ReadLine();
 
                 Console.Write("Enter first term: ");
-                double firstTerm = 0;
-
-                while (!userInput)
-                {
-                    userInput = double.TryParse(Console.ReadLine(), out firstTerm);
-
-                    if (!userInput)
-                    {
-                        Console.WriteLine("Try again! Only numbers please");
-                    }
-                }
-
-                userInput = false;
+                double firstTerm = ParseUserInput();
 
                 Console.Write("Enter second term: ");
-                double secondTerm = 0;
-
-                while (!userInput)
-                {
-                    userInput = double.TryParse(Console.ReadLine(), out secondTerm);
-
-                    if (!userInput)
-                    {
-                        Console.WriteLine("Try again! Only numbers please");
-                    }
-                }
-
-                userInput = false;
+                double secondTerm = ParseUserInput();
 
                 Console.Write("Enter third term: ");
-                double thirdTerm = 0;
-
-                while (!userInput)
-                {
-                    userInput = double.TryParse(Console.ReadLine(), out thirdTerm);
-
-                    if (!userInput)
-                    {
-                        Console.WriteLine("Try again! Only numbers please");
-                    }
-                }
+                double thirdTerm = ParseUserInput();
 
                 if (firstOperator == "+")
                 {
@@ -201,6 +166,25 @@ namespace CalculatorInlamningsUppgift
                 else
                 {
                     continue;
+                }
+            }
+        }
+
+        static double ParseUserInput()
+        {
+            double userInput;
+
+            while (true)
+            {
+                try
+                {
+                    userInput = double.Parse(Console.ReadLine());
+                    return userInput;
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Only numbers please! Try again");
                 }
             }
         }
