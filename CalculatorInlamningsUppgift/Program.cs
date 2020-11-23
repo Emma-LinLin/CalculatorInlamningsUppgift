@@ -36,21 +36,21 @@ namespace CalculatorInlamningsUppgift
                 Console.Write("Enter third term: ");
                 double thirdTerm = ParseUserInput();
 
-                if (firstOperator == "+")
+                switch (firstOperator)
                 {
-                    result = CalculateAddition(secondOperator, firstTerm, secondTerm, thirdTerm);
-                }
-                else if (firstOperator == "-")
-                {
-                    result = CalculateSubtraction(secondOperator, firstTerm, secondTerm, thirdTerm);
-                }
-                else if (firstOperator == "*")
-                {
-                    result = CalculateMultiplication(secondOperator, firstTerm, secondTerm, thirdTerm);
-                }
-                else if (firstOperator == "/")
-                {
-                    result = CalculateMultiplication(secondOperator, firstTerm, secondTerm, thirdTerm);
+                    case "+":
+                        result = CalculateAddition(secondOperator, firstTerm, secondTerm, thirdTerm);
+                        break;
+                    case "-":
+                        result = CalculateSubtraction(secondOperator, firstTerm, secondTerm, thirdTerm);
+                        break;
+                    case "*":
+                        result = CalculateMultiplication(secondOperator, firstTerm, secondTerm, thirdTerm);
+                        break;
+                    case "/":
+                        result = CalculateDivision(secondOperator, firstTerm, secondTerm, thirdTerm);
+                        break;
+
                 }
 
                 totalSum.Add(result);
