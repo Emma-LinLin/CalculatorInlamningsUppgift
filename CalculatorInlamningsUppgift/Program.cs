@@ -50,9 +50,7 @@ namespace CalculatorInlamningsUppgift
                     case "/":
                         result = CalculateDivision(secondOperator, firstTerm, secondTerm, thirdTerm);
                         break;
-
                 }
-
                 totalSum.Add(result);
 
                 if (result == 100)
@@ -76,10 +74,6 @@ namespace CalculatorInlamningsUppgift
                     double sum = totalSum.Sum();
                     Console.WriteLine($"The total sum of all rounds adds up to {sum}, thanks for playing!");
                     break;
-                }
-                else
-                {
-                    continue;
                 }
             }
         }
